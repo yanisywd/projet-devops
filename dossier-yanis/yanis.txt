@@ -1,0 +1,38 @@
+Dans ce projet, j'ai développé une classe `Panier` pour gérer un panier d'achats en ligne. 
+L'objectif était de permettre l'ajout d'articles, l'application de remises et le calcul du total en prenant en compte les taxes. 
+Voici un aperçu des fonctionnalités que j'ai implémentées.
+
+### 1. La classe `Panier`
+J'ai créé la classe `Panier` avec plusieurs attributs et méthodes pour répondre aux besoins d'un panier d'achats classique.
+
+#### Attributs :
+- `articles` : Une liste qui stocke les articles du panier, chaque article étant représenté par un dictionnaire contenant son nom et son prix.
+- `remise` : Un attribut pour stocker le pourcentage de remise appliqué, initialisé à 0.
+- `taxe` : La taxe de 20% appliquée au total du panier.
+
+#### Méthodes :
+- `__init__` : Le constructeur qui initialise les attributs `articles`, `remise`, et `taxe`.
+- `ajouter_article` : Permet d'ajouter un article au panier. Chaque article est ajouté sous forme de dictionnaire avec son nom et son prix.
+- `appliquer_remise` : Applique une remise en pourcentage au total du panier.
+- `calculer_total` : Calcule le total du panier après avoir appliqué la remise (le cas échéant) et la taxe. 
+  La formule utilisée est :  
+  `Total = (Total sans remise * (1 - remise)) * (1 + taxe)`
+- `afficher_panier` : Affiche la liste des articles dans le panier sous forme de dictionnaires.
+
+### 2. Tests Unitaires
+J'ai utilisé le module `unittest` pour tester les différentes fonctionnalités de la classe `Panier` et m'assurer qu'elles fonctionnent comme prévu. 
+Voici les tests que j'ai mis en place :
+- **Test d'ajout d'article** : Ce test vérifie qu'un article peut être ajouté au panier et que les informations (nom et prix) sont correctement enregistrées.
+- **Test de remise** : Ce test vérifie que la remise est correctement appliquée au total du panier, et que le calcul du total après remise et taxe est juste.
+- **Test du calcul du total sans remise** : Ce test vérifie que le total est correctement calculé sans remise, en tenant compte de la taxe de 20%.
+- **Test du calcul du total avec remise et taxe** : Ce test vérifie que la remise et la taxe sont appliquées correctement et que le calcul du total est correct.
+- **Test de l'affichage du panier** : Ce test vérifie que la méthode `afficher_panier` renvoie correctement la liste des articles dans le panier avec leurs prix.
+
+### 3. Scénarios BDD en Gherkin
+En complément des tests unitaires, j'ai rédigé des scénarios en Gherkin pour définir le comportement attendu du panier d'achats de manière comportementale (BDD). Ces scénarios incluent :
+- **Ajouter un article au panier** : Vérifie qu'un article ajouté au panier est bien pris en compte et que le total avec taxe est correct.
+- **Appliquer une remise** : Vérifie que la remise de 10% est correctement appliquée et que le total final est conforme.
+- **Calculer le total sans remise** : Vérifie que le total sans remise est calculé correctement avec la taxe.
+- **Afficher les articles du panier** : Vérifie que la liste des articles du panier est correctement affichée.
+
+Ces tests BDD permettront d'intégrer des tests automatisés dans un environnement de développement pour s'assurer que le panier fonctionne comme prévu dans différents scénarios d'utilisation.
