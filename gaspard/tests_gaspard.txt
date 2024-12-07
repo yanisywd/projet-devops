@@ -1,0 +1,16 @@
+Gaspard
+
+Les test unitaires à réaliser sont :
+- La méthode Moyenne_arithmetique retourne bien la moyenne arithmetique de la liste en entrée
+- La méthode Calcul_moment_centré_ordre_k retourne la somme des valeurs du premier argument soustrait à la moyenne arithmetique à la puissance du second argument de la méthode. Le tout divisé par la taille de la liste du premier argument
+- La méthode Calcul_Skewness_Pearson retourne le moment centré en ordre 3 au carré divisé par le moment centré en ordre 2 au cube
+- La méthode Calcul_Kurtosis_Pearson retourne le moment centré en ordre 4 divisé par le moment centré en ordre 2 au carré
+
+Les renforcements de code sont :
+- Tester que la méthode Moyenne_arithmetique reçoit bien une liste non vide de nombre en entrée et retourne une valeur comprise entre le min et le max de la liste
+- Tester que la méthode Calcul_moment_centré_ordre_k bien une liste non vide de nombre en entrée comme premier argument
+- Tester que la méthode Calcul_Skewness_Pearson bien une liste non vide de nombre en entrée
+- Tester que la méthode Calcul_Kurtosis_Pearson bien une liste non vide de nombre en entrée
+
+Automatisation :
+Ajout d'un hook de pre-commit afin de valider le commit uniquement si les tests ne renvoient pas d'erreur
