@@ -1,0 +1,33 @@
+Tristan Choquet - Identification des tests unitaires et des renforcements associés
+
+Test unitaires
+- methode1tchoquet :
+    - Tester avec des valeurs positives que les résultats soient corrects
+    - Tester que a n'est pas négatif
+    - Tester que les paramètres soient bien un int ou un float
+    - Tester que a n'est pas égal à 0 pour calculer l'inverse
+    - Tester que racine carré de 169 est bien égale à 13
+
+- methode2tchoquet :
+    - Tester que selon les données d'entrées, les résultats soient corrects
+    - Tester avec des chaînes de caractères vides
+    - Tester que les attributs soient du bon type
+
+
+Renforcements
+- methode1tchoquet :
+    - Rajouter un test qui vérifie que a n'est pas égal ou inférieur à 0
+    - Rajouter un test sur le type des paramètres
+
+- methode2tchoquet :
+    - Rajouter un test sur le type des paramètres
+
+
+Automatisation
+
+Afin d'automatiser le test, j'ai mis en place un hook de pre-commit :
+- Pour cela, je suis allé dans le répertoire .git/hook/
+- J'ai ajouté au fichier pre-commit-sample la ligne "python3 /tristan/test_tristan.py"
+- J'ai renommé le fichier en pre-commit-sample >> pre-commit
+- J'ai donné les droits d'exécution au fichier "chmod +x pre-commit"
+Ainsi à chaque commit, ça exécute le fichier de test.
